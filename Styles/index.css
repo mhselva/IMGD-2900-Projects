@@ -3,6 +3,7 @@ header {
     font-family: Futura, Trebuchet MS;
     font-weight: bold;
     color: #FFFFFF;
+    background: #6495ED;
     font-size: 50px;
 
     width: 100%;
@@ -12,6 +13,7 @@ header {
     position: fixed;
     top: 8%;
     left: 0;
+    z-index: 1;
 }
 
 h1 {
