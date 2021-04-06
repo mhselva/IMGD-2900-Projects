@@ -38,9 +38,6 @@ const D = {
 	// init - Initializes the grid, status text, dots, and handles Login information.
 	init: function (system, options) {
 
-		// Team name.
-		const TEAM = "fishbowl";
-
 		// Initializing grid.
 		PS.gridSize(D.GRID_WIDTH, D.GRID_HEIGHT);
 		PS.color(PS.ALL, PS.ALL, D.COLOR_BG);
@@ -70,15 +67,6 @@ const D = {
 		// Status text.
 		PS.statusColor(PS.COLOR_BLACK);
 		PS.statusText("Poke-a-Dot");
-
-		// Login information.
-		PS.dbLogin("imgd2900", TEAM, function (id, user) {
-			if (user === PS.ERROR) {
-				return;
-			}
-			PS.dbEvent(TEAM, "startup", user);
-			PS.dbSend(TEAM, PS.CURRENT, {discard: true});
-		}, {active: true});
 	},
 
 	// touch - Handles touch events, updating dot position after a successful touch.
