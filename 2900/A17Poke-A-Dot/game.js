@@ -42,6 +42,7 @@ const D = ( function () {
 
 		// Create a new dot if the location isn't already occupied by a dot.
 		if (PS.color(newX, newY) === PS.COLOR_WHITE) {
+			PS.fade(newX, newY, 30);
 			let dotColor = [PS.random(200) + 20, PS.random(200) + 20, PS.random(200) + 20];
 			PS.color(dotPosition[0], dotPosition[1], dotColor);
 		} else {
@@ -67,11 +68,6 @@ const D = ( function () {
 				for (let j = 0; j < GRID_SIZE; j++) {
 					// Set scales initially to prevent "flashing" on fade.
 					PS.scale(i, j, PS.random(50) + 50);
-
-					// White dots fade to color, fade doesn't go both ways.
-					if (PS.color(i, j) === PS.COLOR_WHITE) {
-						PS.fade(i, j, 30);
-					}
 				}
 			}
 
@@ -108,11 +104,6 @@ const D = ( function () {
 					// Randomize scales on inactive dots.
 					if (PS.color(i, j) === PS.COLOR_WHITE) {
 						PS.scale(i, j, PS.random(50) + 50);
-					}
-
-					// Inactive dots fade to color.
-					if (PS.color(i, j) === PS.COLOR_WHITE) {
-						PS.fade(i, j, 30);
 					}
 				}
 			}
