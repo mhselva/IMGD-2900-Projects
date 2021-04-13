@@ -25,9 +25,9 @@ const G = (function () {
 			}
 
 			if (PS.glyph(x,y) === GLYPH) {
-				PS.statusText("Correct square! You win.");
+				PS.statusText("Correct square! Restart with SPACEBAR.");
 			} else {
-				PS.statusText("Wrong square. You lose.");
+				PS.statusText("Wrong square. Restart with SPACEBAR.");
 			}
 		}
 
@@ -78,7 +78,7 @@ const G = (function () {
 			montyHall(x, y);
 		},
 
-		// Handle keyboard input (Arrow Keys & WASD).
+		// Handle keyboard input.
 		keyDown: function(key) {
 
 			// Allow user to restart if they press the spacebar.
