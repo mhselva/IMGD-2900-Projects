@@ -1,43 +1,9 @@
 /*
 game.js for Perlenspiel 3.3.xd
 Last revision: 2021-04-08 (BM)
-
-Perlenspiel is a scheme by Professor Moriarty (bmoriarty@wpi.edu).
-This version of Perlenspiel (3.3.x) is hosted at <https://ps3.perlenspiel.net>
-Perlenspiel is Copyright © 2009-21 Brian Moriarty.
-This file is part of the standard Perlenspiel 3.3.x devkit distribution.
-
-Perlenspiel is free software: you can redistribute it and/or modify
-it under the terms of the GNU Lesser General Public License as published
-by the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-Perlenspiel is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Lesser General Public License for more details.
-
-You may have received a copy of the GNU Lesser General Public License
-along with the Perlenspiel devkit. If not, see <http://www.gnu.org/licenses/>.
 */
 
-/*
-This JavaScript file is a template for creating new Perlenspiel 3.3.x games.
-Add code to the event handlers required by your project.
-Any unused event-handling function templates can be safely deleted.
-Refer to the tutorials and documentation at <https://ps3.perlenspiel.net> for details.
-*/
-
-/*
-The following comment lines are for JSHint <https://jshint.com>, a tool for monitoring code quality.
-You may find them useful if your development environment is configured to support JSHint.
-If you don't use JSHint (or are using it with a configuration file), you can safely delete these lines.
-*/
-
-/* jshint browser : true, devel : true, esversion : 6, freeze : true */
-/* globals PS : true */
-
-"use strict"; // Do NOT delete this directive!
+"use strict";
 
 const G = (function () {
 
@@ -69,7 +35,7 @@ const G = (function () {
 		if (count === 0) {
 			for (let i = 0; i < GRID; i++) {
 				for (let j = 0; j < GRID; j++) {
-					if (PS.glyph(i, j) !== GLYPH) {
+					if (PS.glyph(i, j) !== GLYPH && PS.glyphColor(i, j) !== SELECT_COLOR) {
 						PS.color(i, j, PS.COLOR_BLACK);
 					}
 				}
