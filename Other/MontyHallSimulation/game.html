@@ -35,43 +35,6 @@ along with the Perlenspiel devkit. If not, see <http://www.gnu.org/licenses/>.
 	<script src="https://perlenspiel.net/ps3/engine/ps3.3d.js"></script>
 </head>
 <body onload="PS._sys( 0x303030, 0xFFFFFF, 'Touch image to begin' );">
-	<!--
-	The following OPTIONAL mods to this file are permitted:
-
-	The three arguments to the PS._sys() call in the <body> tag above control the appearance of the cover page
-	displayed before your application begins. The values supplied are the engine defaults.
-
-	The first argument specifies the cover page background color.
-	It should be a hexadecimal RGB triplet in the range 0x000000 to 0xFFFFFF inclusive.
-	Values outside this range are clamped. Default = 0x303030 (dark gray).
-
-	The second argument specifies the status line text color.
-	It should also be a hexadecimal RGB triplet in the range 0x000000 to 0xFFFFFF inclusive.
-	Values outside this range are clamped. Default = 0xFFFFFF (pure white).
-
-	The third argument specifies the text initially displayed in the status line above the grid.
-	It should be specified as a BRIEF (< 24 characters) string, which must be enclosed in SINGLE quotes.
-	To suppress the status line text, specify an empty string: '' (an unspaced pair of SINGLE quotes).
-	Default = 'Touch image to begin'.
-
-	By default, the engine attempts to load a 24-bit RGB image file named "cover.png" located in the same directory as this .html file.
-	This image is displayed underneath the status line. Clicking or touching the image will start the application.
-	You can freely edit the appearance of the "cover.png" image file to suit your needs.
-	However, the original filename, location and dimensions (512 x 512 pixels) of the "cover.png" file must NOT be altered.
-	If no "cover.png" file is present in the same directory as this .html file when the engine is initialized,
-	or if that file fails to load for any reason, a tasteful image of the Perlenspiel logo will be displayed instead.
-
-	By default, the engine attempts to load a JavaScript file named "game.js" located in the same directory as this .html file.
-	That file is expected to respond to the event handlers documented in the game.js template file provided in the Perlenspiel devkit.
-	You can change the "game.js" file specifier in the <script> element below to specify a different .js file.
-	The file specifier may be expressed relative to the directory containing this .html file, or may be fully qualified.
-	You can also add additional <script> elements if needed. The specified .js files will be loaded in the order given.
-
-	IMPORTANT!
-
-	Altering this .html file, or its accompanying .png and .js files, IN ANY WAY other than the methods explicitly described
-	in the above comments can result in unpredictable engine behavior and/or breakage, and is a grievous violation of The Rules.
-	-->
 	<script src="game.js"></script>
 </body>
 </html>
