@@ -33,10 +33,8 @@ const G = (function () {
 
 		// Round 1. Pick a square from the 100 available options.
 		if (count === 0) {
-			let doors = 0;
 			for (let i = 0; i < GRID; i++) {
 				for (let j = 0; j < GRID; j++) {
-					doors += 1;
 					if (PS.glyph(i, j) !== GLYPH && PS.glyphColor(i, j) !== SELECT_COLOR) {
 						PS.color(i, j, PS.COLOR_BLACK);
 					}
