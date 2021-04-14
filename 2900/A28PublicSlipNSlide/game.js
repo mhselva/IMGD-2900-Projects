@@ -1182,7 +1182,7 @@ const G = (function () {
 			let data = current_map.data[(y * GRID_SIZE) + x];
 			if (level_select_active) {
 				// Only highlight levels that have been unlocked & distinguish between complete and uncomplete levels.
-				if (data !== MAP_WALL && data !== MAP_ICE && data !== MAP_UP_DIR && data !== MAP_TELE1) {
+				if (y < 9 && data !== MAP_WALL && data !== MAP_ICE && data !== MAP_UP_DIR && data !== MAP_TELE1) {
 					PS.border(x, y, 3);
 					if (complete_list.includes(data)) { PS.borderColor(x, y, PS.COLOR_YELLOW); } else { PS.borderColor(x, y, PS.COLOR_BLACK); }
 				}
