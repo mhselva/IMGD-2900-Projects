@@ -13,7 +13,12 @@ h1 {
     color: #FFFFFF;
     font-size: 60px;
     text-align: center;
-    -webkit-text-stroke: 1px #583a6c;
+}
+
+@supports (-webkit-text-stroke: 1px #583a6c) {
+    h1 {
+        -webkit-text-stroke: 1px #583a6c;
+    }
 }
 
 body {
