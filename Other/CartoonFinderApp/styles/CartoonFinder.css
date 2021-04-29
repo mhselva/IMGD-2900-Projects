@@ -15,8 +15,20 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-family: CartoonHead;
+    color: #FFFFFF;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 3%;
+}
+
+.rech2 {
+    font-size: 30px;
+}
+
 @supports (-webkit-text-stroke: 1px #583a6c) {
-    h1 {
+    h1, h2 {
         -webkit-text-stroke: 1px #583a6c;
     }
 }
@@ -48,7 +60,6 @@ footer p {
 }
 
 button {
-    border: none;
     background-color: #9b66c6;
     color: #FFFFFF;
     padding: 15px 32px;
@@ -68,28 +79,25 @@ button {
 
 
 .recButton {
-    border: none;
-    background-color: #9b66c6;
-    color: #FFFFFF;
     padding: 10px 25px;
-    border-radius: 20px;
-    display: block;
-
-    border: 3px solid white;
-
-    font-family: CartoonSubHead;
-    text-align: center;
     font-size: 20px;
-
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 15%;
 }
 
+.backButton {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+    padding-right: 10px;
+    display: inline;
 
-button:hover {
-    background-color: #9b66c6;
-    color: #FFFFFF;
+    background: url("../images/BackButton.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-size: 18px;
+
+    margin-top: 2%;
 }
 
 /* Desktop */
