@@ -24,7 +24,7 @@ h2 {
 }
 
 .rech2 {
-    font-size: 30px;
+    font-size: 33px;
 }
 
 @supports (-webkit-text-stroke: 1px #583a6c) {
@@ -49,6 +49,11 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
+}
+
+.navFoot {
+    height: 50px;
+    text-align: center;
 }
 
 footer p {
@@ -82,6 +87,19 @@ button {
     padding: 10px 25px;
     font-size: 20px;
     margin-top: 15%;
+}
+
+.navButton {
+    padding: 2%;
+    border-radius: 0;
+    display: inline-block;
+
+    border: 2px solid white;
+    font-size: 18px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
 }
 
 .backButton {
