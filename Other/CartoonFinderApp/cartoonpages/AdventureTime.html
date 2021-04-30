@@ -10,12 +10,38 @@
 
 <h2>Adventure Time</h2>
 
+<img src="../images/AdventureTime.jpg" alt="Adventure Time">
+
+<input type="button" onclick="Add()" class="addButton" id="addButton" value=""/>
 
 <footer class="navFoot">
   <button type="button" onclick="document.location='../FindCartoons.html'" class="navButtonSmall">Find Cartoons</button>
   <button type="button" onclick="document.location='../MyCartoons.html'" class="navButtonSmall">My Cartoons</button>
   <button type="button" onclick="document.location='../Recommendations.html'" class="navButtonSmall">Recommendations</button>
 </footer>
+
+<ul id="myCartoonsList">
+</ul>
+
+<script>
+  if (localStorage.getItem('AdventureTime') == null) {
+    document.getElementById("addButton").value = "Add to My Cartoons";
+  } else {
+    document.getElementById("addButton").value = "Remove from My Cartoons";
+  }
+
+  function Add() {
+    let elem = document.getElementById("addButton");
+
+    if (localStorage.getItem('AdventureTime') == null) {
+      elem.value = "Remove from My Cartoons";
+      localStorage.setItem('AdventureTime', '<li id="cartoon">' + '<a href="cartoonpages/AdventureTime.html">' + "Adventure Time" + '</a>' + '</li>');
+    } else {
+      elem.value = "Add to My Cartoons";
+      localStorage.removeItem('AdventureTime');
+    }
+  }
+</script>
 
 </body>
 </html>

@@ -11,6 +11,19 @@
 <button type="button" onclick="document.location='Home.html'" class="backButton"></button>
 <h2>My Cartoons</h2>
 
+<script>
+  let ul=document.createElement('ul');
+  document.body.appendChild(ul);
+
+  Object.keys(localStorage).forEach(function(key){
+    let li=document.createElement('li');
+
+    ul.appendChild(li);
+    li.innerHTML=li.innerHTML + localStorage.getItem(key);
+    console.log(localStorage.getItem(key));
+  });
+</script>
+
 <footer class="navFoot">
   <button type="button" onclick="document.location='FindCartoons.html'" class="navButton">Find Cartoons</button>
   <button type="button" onclick="document.location='Recommendations.html'" class="navButton">Recommendations</button>
