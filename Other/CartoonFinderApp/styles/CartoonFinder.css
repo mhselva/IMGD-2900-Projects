@@ -8,6 +8,11 @@
     src: url("../fonts/NoVirus.ttf");
 }
 
+@font-face {
+    font-family: CartoonText;
+    src: url("../fonts/Asdonuts.ttf");
+}
+
 h1 {
     font-family: CartoonHead;
     color: #FFFFFF;
@@ -24,7 +29,15 @@ h2 {
 }
 
 .rech2 {
-    font-size: 33px;
+    font-size: 35px;
+}
+
+p {
+    font-family: CartoonText;
+    color: #FFFFFF;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20%;
 }
 
 @supports (-webkit-text-stroke: 1px #583a6c) {
@@ -34,9 +47,26 @@ h2 {
 }
 
 body {
-    font-family: Futura, Trebuchet MS;
     background: rgba(153, 100, 237, 0.93);
-    font-size: 14px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    background: rgba(192, 153, 245, 0.93);
+    margin: 3%;
+    padding: 2px;
+}
+
+ul a {
+    color: white;
+    font-family: CartoonSubHead;
+    font-size: 30px;
+    margin-left: 3%;
 }
 
 footer {
@@ -57,8 +87,8 @@ footer {
 }
 
 footer p {
-    font-family: Futura, Trebuchet MS;
-    font-size: 12px;
+    font-family: CartoonSubHead;
+    font-size: 16px;
     text-align: center;
     color: white;
     margin-top: 8px;
@@ -99,7 +129,20 @@ button {
 
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2%;
+    margin-top: 1.5%;
+}
+
+.navButtonSmall {
+    padding: 2%;
+    border-radius: 0;
+    display: inline-block;
+
+    border: 2px solid white;
+    font-size: 15px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5%;
 }
 
 .backButton {
@@ -118,10 +161,7 @@ button {
     margin-top: 2%;
 }
 
-/* Desktop */
-@media screen and (min-width: 1101px) {
-}
-
-/* Mobile */
-@media screen and (max-width: 1100px) {
+a:link, a:visited, a:hover, a:active {
+    color: white;
+    text-decoration: none;
 }
