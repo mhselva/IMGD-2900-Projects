@@ -12,7 +12,7 @@
 
 <img src="../images/GravityFalls.jpg">
 
-<input type="button" onclick="Add()" class="addButton" id="addButton" value=""/>
+<button type="button" onclick="Add()" class="addButton" id="addButton"></button>
 
 <p class="hidden">
   .
@@ -26,19 +26,19 @@
 
 <script>
   if (localStorage.getItem('GravityFalls') == null) {
-    document.getElementById("addButton").value = "Add to My Cartoons";
+    document.getElementById("addButton").innerHTML = "Add to My Cartoons";
   } else {
-    document.getElementById("addButton").value = "Remove from My Cartoons";
+    document.getElementById("addButton").innerHTML = "Remove from My Cartoons";
   }
 
   function Add() {
     let elem = document.getElementById("addButton");
 
     if (localStorage.getItem('GravityFalls') == null) {
-      elem.value = "Remove from My Cartoons";
+      elem.innerHTML = "Remove from My Cartoons";
       localStorage.setItem('GravityFalls', '<li id="cartoon">' + '<a href="cartoonpages/GravityFalls.html">' + "Gravity Falls" + '</a>' + '</li>');
     } else {
-      elem.value = "Add to My Cartoons";
+      elem.innerHTML = "Add to My Cartoons";
       localStorage.removeItem('GravityFalls');
     }
   }

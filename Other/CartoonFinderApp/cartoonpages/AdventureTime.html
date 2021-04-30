@@ -12,7 +12,7 @@
 
 <img src="../images/AdventureTime.jpg">
 
-<input type="button" onclick="Add()" class="addButton" id="addButton" value=""/>
+<button type="button" onclick="Add()" class="addButton" id="addButton"></button>
 
 <p class="hidden">
   .
@@ -29,19 +29,19 @@
 
 <script>
   if (localStorage.getItem('AdventureTime') == null) {
-    document.getElementById("addButton").value = "Add to My Cartoons";
+    document.getElementById("addButton").innerHTML = "Add to My Cartoons";
   } else {
-    document.getElementById("addButton").value = "Remove from My Cartoons";
+    document.getElementById("addButton").innerHTML = "Remove from My Cartoons";
   }
 
   function Add() {
     let elem = document.getElementById("addButton");
 
     if (localStorage.getItem('AdventureTime') == null) {
-      elem.value = "Remove from My Cartoons";
+      elem.innerHTML = "Remove from My Cartoons";
       localStorage.setItem('AdventureTime', '<li id="cartoon">' + '<a href="cartoonpages/AdventureTime.html">' + "Adventure Time" + '</a>' + '</li>');
     } else {
-      elem.value = "Add to My Cartoons";
+      elem.innerHTML = "Add to My Cartoons";
       localStorage.removeItem('AdventureTime');
     }
   }

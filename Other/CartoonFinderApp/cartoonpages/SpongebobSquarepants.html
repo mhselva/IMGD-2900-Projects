@@ -12,7 +12,7 @@
 
 <img src="../images/Spongebob.jpg" class="spongebobImg">
 
-<input type="button" onclick="Add()" class="addButton" id="addButton" value=""/>
+<button type="button" onclick="Add()" class="addButton" id="addButton"></button>
 
 <p class="hidden">
   .
@@ -26,19 +26,19 @@
 
 <script>
   if (localStorage.getItem('Spongebob') == null) {
-    document.getElementById("addButton").value = "Add to My Cartoons";
+    document.getElementById("addButton").innerHTML = "Add to My Cartoons";
   } else {
-    document.getElementById("addButton").value = "Remove from My Cartoons";
+    document.getElementById("addButton").innerHTML = "Remove from My Cartoons";
   }
 
   function Add() {
     let elem = document.getElementById("addButton");
 
     if (localStorage.getItem('Spongebob') == null) {
-      elem.value = "Remove from My Cartoons";
+      elem.innerHTML = "Remove from My Cartoons";
       localStorage.setItem('Spongebob', '<li id="cartoon">' + '<a href="cartoonpages/SpongebobSquarepants.html">' + "Spongebob Squarepants" + '</a>' + '</li>');
     } else {
-      elem.value = "Add to My Cartoons";
+      elem.innerHTML = "Add to My Cartoons";
       localStorage.removeItem('Spongebob');
     }
   }
