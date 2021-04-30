@@ -47,7 +47,7 @@ p {
 }
 
 body {
-    background: rgba(153, 100, 237, 0.93);
+    background: rgb(153, 100, 237);
     min-height:100%;
     overflow:scroll;
 }
@@ -83,7 +83,7 @@ img {
 }
 
 .hidden {
-    color: rgba(153, 100, 237, 0);
+    color: rgb(153, 100, 237);
 }
 
 footer {
