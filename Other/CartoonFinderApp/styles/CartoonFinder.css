@@ -48,6 +48,9 @@ p {
 
 body {
     background: rgba(153, 100, 237, 0.93);
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 ul {
