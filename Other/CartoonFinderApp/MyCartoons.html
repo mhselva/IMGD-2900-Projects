@@ -11,17 +11,23 @@
 <button type="button" onclick="document.location='Home.html'" class="backButton"></button>
 <h2>My Cartoons</h2>
 
+<p id="emptyText"></p>
+
 <script>
-  let ul=document.createElement('ul');
-  document.body.appendChild(ul);
+  if (localStorage.length === 0) {
+    document.getElementById('emptyText').innerHTML="Add cartoons from the " + '<a href="FindCartoons.html">Find Cartoons</a>' + " page to get started.";
+  } else {
+    let ul = document.createElement('ul');
+    document.body.appendChild(ul);
 
-  Object.keys(localStorage).forEach(function(key){
-    let li=document.createElement('li');
+    Object.keys(localStorage).forEach(function (key) {
+      let li = document.createElement('li');
 
-    ul.appendChild(li);
-    li.innerHTML=li.innerHTML + localStorage.getItem(key);
-    console.log(localStorage.getItem(key));
-  });
+      ul.appendChild(li);
+      li.innerHTML = li.innerHTML + localStorage.getItem(key);
+      console.log(localStorage.getItem(key));
+    });
+  }
 </script>
 
 <footer class="navFoot">

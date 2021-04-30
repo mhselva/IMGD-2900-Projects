@@ -48,9 +48,6 @@ p {
 
 body {
     background: rgba(153, 100, 237, 0.93);
-    height: 100%;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
 }
 
 ul {
@@ -77,6 +74,10 @@ img {
     margin-left: auto;
     margin-right: auto;
     width: 75%;
+}
+
+.spongebobImg {
+    width: 65%;
 }
 
 footer {

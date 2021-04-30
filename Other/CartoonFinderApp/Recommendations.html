@@ -11,7 +11,15 @@
 <button type="button" onclick="document.location='Home.html'" class="backButton"></button>
 <h2 class="rech2">Recommendations</h2>
 
-<p>No Recommendations to show. Add cartoons to your <a href="MyCartoons.html">'My Cartoons'</a> list to get started.</p>
+<p id="emptyText"></p>
+
+<script>
+    if (localStorage.length === 0) {
+        document.getElementById('emptyText').innerHTML="No recommendations to show. Add cartoons to your " + '<a href="MyCartoons.html">My Cartoons</a>' + " list to get started.";
+    } else {
+        document.getElementById('emptyText').innerHTML="Insert recommendations here";
+    }
+</script>
 
 <footer class="navFoot">
     <button type="button" onclick="document.location='FindCartoons.html'" class="navButton">Find Cartoons</button>
