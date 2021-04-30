@@ -10,12 +10,33 @@
 
 <h2>Steven Universe</h2>
 
+<input type="button" onclick="Add()" class="addButton" id="addButton" value=""/>
 
 <footer class="navFoot">
   <button type="button" onclick="document.location='../FindCartoons.html'" class="navButtonSmall">Find Cartoons</button>
   <button type="button" onclick="document.location='../MyCartoons.html'" class="navButtonSmall">My Cartoons</button>
   <button type="button" onclick="document.location='../Recommendations.html'" class="navButtonSmall">Recommendations</button>
 </footer>
+
+<script>
+  if (localStorage.getItem('StevenU') == null) {
+    document.getElementById("addButton").value = "Add to My Cartoons";
+  } else {
+    document.getElementById("addButton").value = "Remove from My Cartoons";
+  }
+
+  function Add() {
+    let elem = document.getElementById("addButton");
+
+    if (localStorage.getItem('StevenU') == null) {
+      elem.value = "Remove from My Cartoons";
+      localStorage.setItem('StevenU', '<li id="cartoon">' + '<a href="cartoonpages/StevenUniverse.html">' + "Steven Universe" + '</a>' + '</li>');
+    } else {
+      elem.value = "Add to My Cartoons";
+      localStorage.removeItem('StevenU');
+    }
+  }
+</script>
 
 </body>
 </html>
