@@ -13,6 +13,8 @@
 
 <p id="emptyText"></p>
 
+<!--Basically make it so this shows a list of all the shows that ARENT in the localStorage list, actual sorting/filtering may come later-->
+
 <script>
     if (localStorage.length === 0) {
         document.getElementById('emptyText').innerHTML="No recommendations to show. Add cartoons to your " + '<a href="MyCartoons.html">My Cartoons</a>' + " list to get started.";
