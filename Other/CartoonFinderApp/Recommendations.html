@@ -13,13 +13,51 @@
 
 <p id="emptyText"></p>
 
-<!--Basically make it so this shows a list of all the shows that ARENT in the localStorage list, actual sorting/filtering may come later-->
-
 <script>
+    let allKeys = ['AdventureTime', 'Amphibia', 'GravityFalls', 'Spongebob', 'StevenU', 'OwlHouse'];
+    let recList = [];
+
     if (localStorage.length === 0) {
         document.getElementById('emptyText').innerHTML="No recommendations to show. Add cartoons to your " + '<a href="MyCartoons.html">My Cartoons</a>' + " list to get started.";
+    } else if (localStorage.length === 6) {
+        document.getElementById('emptyText').innerHTML = "All of the shows are on your " + '<a href="MyCartoons.html">My Cartoons</a>' + " list. There's nothing left to recommend.";
     } else {
-        document.getElementById('emptyText').innerHTML="Insert recommendations here";
+        Object.keys(localStorage).forEach(function (key) {
+            allKeys = allKeys.filter(e => e !== key);
+        })
+
+        let ul = document.createElement('ul');
+        document.body.appendChild(ul);
+
+        for (let i = 0; i < allKeys.length; i++) {
+            switch(allKeys[i]) {
+                case 'AdventureTime':
+                    recList.push('<li id="cartoon">' + '<a href="cartoonpages/AdventureTime.html">' + "Adventure Time" + '</a>' + '</li>');
+                    break;
+                case 'Amphibia':
+                    recList.push('<li id="cartoon">' + '<a href="cartoonpages/Amphibia.html">' + "Amphibia" + '</a>' + '</li>');
+                    break;
+                case 'GravityFalls':
+                    recList.push('<li id="cartoon">' + '<a href="cartoonpages/GravityFalls.html">' + "Gravity Falls" + '</a>' + '</li>');
+                    break;
+                case 'Spongebob':
+                    recList.push('<li id="cartoon">' + '<a href="cartoonpages/SpongebobSquarepants.html">' + "Spongebob Squarepants" + '</a>' + '</li>');
+                    break;
+                case 'StevenU':
+                    recList.push('<li id="cartoon">' + '<a href="cartoonpages/StevenUniverse.html">' + "Steven Universe" + '</a>' + '</li>');
+                    break;
+                case 'OwlHouse':
+                    recList.push('<li id="cartoon">' + '<a href="cartoonpages/TheOwlHouse.html">' + "The Owl House" + '</a>' + '</li>');
+                    break;
+            }
+        }
+
+        for (let i = 0; i < recList.length; i++) {
+            let li = document.createElement('li');
+
+            ul.appendChild(li);
+            li.innerHTML = li.innerHTML + recList[i];
+        }
     }
 </script>
 
