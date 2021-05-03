@@ -14,21 +14,30 @@
 <p id="emptyText"></p>
 
 <script>
+    /* Sample generation of recommendations for first prototype.
+        Currently just prints the cartoons that aren't included in the My Cartoons list.
+        A theoretical in depth/finalized implementation would custom recommend shows based on your interests.  */
     let allKeys = ['AdventureTime', 'Amphibia', 'GravityFalls', 'Spongebob', 'StevenU', 'OwlHouse'];
     let recList = [];
 
     if (localStorage.length === 0) {
+        // If localStorage is empty, print a prompt that sends the user to My Cartoons (which will send the user to Find Cartoons).
         document.getElementById('emptyText').innerHTML="No recommendations to show. Add cartoons to your " + '<a href="MyCartoons.html">My Cartoons</a>' + " list to get started.";
     } else if (localStorage.length === 6) {
+        // If all shows are in localStorage, print a message that tells the user there is nothing left to recommend.
         document.getElementById('emptyText').innerHTML = "All of the shows are on your " + '<a href="MyCartoons.html">My Cartoons</a>' + " list. There's nothing left to recommend.";
     } else {
+
+        // Filter out the keys that aren't present in localStorage (that aren't on the My Cartoons list).
         Object.keys(localStorage).forEach(function (key) {
             allKeys = allKeys.filter(e => e !== key);
         })
 
+        // Create unordered list.
         let ul = document.createElement('ul');
         document.body.appendChild(ul);
 
+        // Iterate through the keys left in the allKeys array and send links to the recList array, which is later printed.
         for (let i = 0; i < allKeys.length; i++) {
             switch(allKeys[i]) {
                 case 'AdventureTime':
@@ -52,6 +61,7 @@
             }
         }
 
+        // Iterate through the newly created recList and generate the links displayed on the page.
         for (let i = 0; i < recList.length; i++) {
             let li = document.createElement('li');
 
@@ -62,6 +72,8 @@
 </script>
 
 <p class="hidden">
+    .
+    .
     .
 </p>
 

@@ -14,15 +14,19 @@
 <p id="emptyText"></p>
 
 <script>
+  // Generate My Cartoons list from localStorage.
   if (localStorage.length === 0) {
+    // If localStorage is empty, print a prompt that sends the user to Find Cartoons.
     document.getElementById('emptyText').innerHTML="Add cartoons from the " + '<a href="FindCartoons.html">Find Cartoons</a>' + " page to get started.";
   } else {
+
+    // Create unordered list.
     let ul = document.createElement('ul');
     document.body.appendChild(ul);
 
+    // If localStorage isn't empty, iterate through it and create a new list containing links to the shows.
     Object.keys(localStorage).forEach(function (key) {
       let li = document.createElement('li');
-
       ul.appendChild(li);
       li.innerHTML = li.innerHTML + localStorage.getItem(key);
     });

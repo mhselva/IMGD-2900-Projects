@@ -25,12 +25,14 @@
 </footer>
 
 <script>
+  // Handle button text switching.
   if (localStorage.getItem('Amphibia') == null) {
     document.getElementById("addButton").innerHTML = "Add to My Cartoons";
   } else {
     document.getElementById("addButton").innerHTML = "Remove from My Cartoons";
   }
 
+  // Function that handles whether or not the cartoon is present in localStorage, which is sent to the My Cartoons page.
   function Add() {
     let elem = document.getElementById("addButton");
 
