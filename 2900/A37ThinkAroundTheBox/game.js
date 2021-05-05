@@ -26,16 +26,18 @@ const G = (function () {
 	let click_order = [];
 
 	// Variables for handling level selection.
+	let victory = 0;
 	let level_select_active;
 	let win_list = [];
 
 	let level_select = {
 		width: 9,
-		height: 2,
+		height: 3,
 		pixelSize: 1,
 		data: [
 			'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9',
-			'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9'
+			'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9',
+			'E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7', 'E8', 'E9'
 		]
 	}
 
@@ -71,13 +73,17 @@ const G = (function () {
 		level_select_active = true;
 		menu_active = false;
 
-		if (win_list.includes(18)) {
+		if (win_list.includes(27)) {
+			if (victory === 0) {
+				PS.audioPlay("fx_tada");
+				victory = 1;
+			}
 			PS.statusText("All Levels Complete!");
 		} else {
 			PS.statusText("Select a Level");
 		}
 
-		PS.gridSize(9, 2);
+		PS.gridSize(9, 3);
 		PS.gridColor(GRID_COLOR);
 
 		let i, x, y, data, color, glyph, glyph_color, radius;
@@ -217,6 +223,69 @@ const G = (function () {
 						color = PS.COLOR_WHITE;
 						radius = 50;
 						if (win_list.includes(17)) { color = PS.COLOR_WHITE; } else { color = PS.COLOR_BLACK; }
+						break;
+					case 'E1':
+						glyph = '1';
+						glyph_color = PS.COLOR_BLACK;
+						color = PS.COLOR_WHITE;
+						radius = 25;
+						if (win_list.includes(18)) { color = PS.COLOR_WHITE; } else { color = PS.COLOR_BLACK; }
+						break;
+					case 'E2':
+						glyph = '2';
+						glyph_color = PS.COLOR_BLACK;
+						color = PS.COLOR_WHITE;
+						radius = 25;
+						if (win_list.includes(19)) { color = PS.COLOR_WHITE; } else { color = PS.COLOR_BLACK; }
+						break;
+					case 'E3':
+						glyph = '3';
+						glyph_color = PS.COLOR_BLACK;
+						color = PS.COLOR_WHITE;
+						radius = 25;
+						if (win_list.includes(20)) { color = PS.COLOR_WHITE; } else { color = PS.COLOR_BLACK; }
+						break;
+					case 'E4':
+						glyph = '4';
+						glyph_color = PS.COLOR_BLACK;
+						color = PS.COLOR_WHITE;
+						radius = 25;
+						if (win_list.includes(21)) { color = PS.COLOR_WHITE; } else { color = PS.COLOR_BLACK; }
+						break;
+					case 'E5':
+						glyph = '5';
+						glyph_color = PS.COLOR_BLACK;
+						color = PS.COLOR_WHITE;
+						radius = 25;
+						if (win_list.includes(22)) { color = PS.COLOR_WHITE; } else { color = PS.COLOR_BLACK; }
+						break;
+					case 'E6':
+						glyph = '6';
+						glyph_color = PS.COLOR_BLACK;
+						color = PS.COLOR_WHITE;
+						radius = 25;
+						if (win_list.includes(23)) { color = PS.COLOR_WHITE; } else { color = PS.COLOR_BLACK; }
+						break;
+					case 'E7':
+						glyph = '7';
+						glyph_color = PS.COLOR_BLACK;
+						color = PS.COLOR_WHITE;
+						radius = 25;
+						if (win_list.includes(24)) { color = PS.COLOR_WHITE; } else { color = PS.COLOR_BLACK; }
+						break;
+					case 'E8':
+						glyph = '8';
+						glyph_color = PS.COLOR_BLACK;
+						color = PS.COLOR_WHITE;
+						radius = 25;
+						if (win_list.includes(25)) { color = PS.COLOR_WHITE; } else { color = PS.COLOR_BLACK; }
+						break;
+					case 'E9':
+						glyph = '9';
+						glyph_color = PS.COLOR_BLACK;
+						color = PS.COLOR_WHITE;
+						radius = 25;
+						if (win_list.includes(26)) { color = PS.COLOR_WHITE; } else { color = PS.COLOR_BLACK; }
 						break;
 					default:
 						color = PS.COLOR_RED;
@@ -432,6 +501,148 @@ const G = (function () {
 				PS.glyph(1, 2, '6');
 				PS.glyph(2, 2, '1');
 				break;
+			case 19:
+				PS.statusText("Which comes first, circles or squares?");
+				level = 19;
+				set_grid(3,2);
+				PS.glyph(0, 0, '6');
+				PS.glyph(1, 0, '5');
+				PS.glyph(2, 0, '4');
+				PS.radius(PS.ALL, 1, 50);
+				PS.glyph(0, 1, '1');
+				PS.glyph(1, 1, '2');
+				PS.glyph(2, 1, '3');
+				break;
+			case 20:
+				PS.statusText("You've seen all the rules now.");
+				level = 20;
+				set_grid(6,1);
+				PS.radius(0, 0, 50);
+				PS.radius(1, 0, 50);
+				PS.radius(2, 0, 50);
+				PS.glyph(0, 0, '1');
+				PS.glyph(1, 0, '2');
+				PS.glyph(2, 0, '3');
+				PS.glyph(3, 0, '6');
+				PS.glyph(4, 0, '5');
+				PS.glyph(5, 0, '4');
+				break;
+			case 21:
+				PS.statusText("Have fun with the rest.");
+				level = 21;
+				set_grid(6,1);
+				PS.radius(0, 0, 50);
+				PS.radius(2, 0, 50);
+				PS.radius(4, 0, 50);
+				PS.glyph(0, 0, '1');
+				PS.glyph(1, 0, '2');
+				PS.glyph(2, 0, '3');
+				PS.glyph(3, 0, '4');
+				PS.glyph(4, 0, '5');
+				PS.glyph(5, 0, '6');
+				break;
+			case 22:
+				PS.statusText("");
+				level = 22;
+				set_grid(4,2);
+				PS.radius(0, 1, 50);
+				PS.radius(1, 1, 50);
+				PS.radius(2, 1, 50);
+				PS.glyph(0, 0, '2');
+				PS.glyph(1, 0, '5');
+				PS.glyph(2, 0, '4');
+				PS.glyph(3, 0, '8');
+				PS.glyph(0, 1, '1');
+				PS.glyph(1, 1, '9');
+				PS.glyph(2, 1, '0');
+				PS.glyph(3, 1, '3');
+				break;
+			case 23:
+				PS.statusText("");
+				level = 23;
+				set_grid(4,2);
+				PS.radius(0, 1, 50);
+				PS.radius(1, 1, 50);
+				PS.radius(2, 1, 50);
+				PS.radius(3, 0, 50);
+				PS.glyph(0, 0, '1');
+				PS.glyph(1, 0, '6');
+				PS.glyph(2, 0, '3');
+				PS.glyph(3, 0, '9');
+				PS.glyph(0, 1, '7');
+				PS.glyph(1, 1, '0');
+				PS.glyph(2, 1, '2');
+				PS.glyph(3, 1, '4');
+				break;
+			case 24:
+				PS.statusText("");
+				level = 24;
+				set_grid(4,2);
+				PS.radius(0, 1, 50);
+				PS.radius(1, 0, 50);
+				PS.radius(2, 1, 50);
+				PS.radius(3, 0, 50);
+				PS.glyph(0, 0, '8');
+				PS.glyph(1, 0, '5');
+				PS.glyph(2, 0, '7');
+				PS.glyph(3, 0, '0');
+				PS.glyph(0, 1, '2');
+				PS.glyph(1, 1, '1');
+				PS.glyph(2, 1, '4');
+				PS.glyph(3, 1, '3');
+				break;
+			case 25:
+				PS.statusText("");
+				level = 25;
+				set_grid(3,3);
+				PS.radius(0, PS.ALL, 50);
+				PS.radius(2, PS.ALL, 50);
+				PS.radius(PS.ALL, 0, 50);
+				PS.radius(PS.ALL, 2, 50);
+				PS.glyph(0, 0, '1');
+				PS.glyph(1, 0, '3');
+				PS.glyph(2, 0, '0');
+				PS.glyph(0, 1, '2');
+				PS.glyph(1, 1, '9');
+				PS.glyph(2, 1, '4');
+				PS.glyph(0, 2, '5');
+				PS.glyph(1, 2, '6');
+				PS.glyph(2, 2, '7');
+				break;
+			case 26:
+				PS.statusText("");
+				level = 26;
+				set_grid(3,3);
+				PS.radius(1, 1, 50);
+				PS.glyph(0, 0, '2');
+				PS.glyph(1, 0, '0');
+				PS.glyph(2, 0, '9');
+				PS.glyph(0, 1, '7');
+				PS.glyph(1, 1, '8');
+				PS.glyph(2, 1, '4');
+				PS.glyph(0, 2, '5');
+				PS.glyph(1, 2, '1');
+				PS.glyph(2, 2, '6');
+				break;
+			case 27:
+				PS.statusText("");
+				level = 27;
+				set_grid(3,3);
+				PS.radius(0, 0, 50);
+				PS.radius(0, 2, 50);
+				PS.radius(1, 2, 50);
+				PS.radius(2, 0, 50);
+				PS.radius(2, 1, 50);
+				PS.glyph(0, 0, '7');
+				PS.glyph(1, 0, '4');
+				PS.glyph(2, 0, '5');
+				PS.glyph(0, 1, '9');
+				PS.glyph(1, 1, '0');
+				PS.glyph(2, 1, '1');
+				PS.glyph(0, 2, '2');
+				PS.glyph(1, 2, '3');
+				PS.glyph(2, 2, '6');
+				break;
 		}
 
 		// Customize grid appearance.
@@ -457,23 +668,13 @@ const G = (function () {
 	return {
 		// Most of the initialization is done per level, so this just loads the level selection screen.
 		init: function() {
-			const TEAM = "fishbowl";
-
 			// Initialize Level Selection.
 			load_level_select();
-
-			// Login information for the PS database.
-			PS.dbLogin("imgd2900", TEAM, function (id, user) {
-				if (user === PS.ERROR) {
-					return;
-				}
-				PS.dbEvent(TEAM, "startup", user);
-				PS.dbSend(TEAM, PS.CURRENT, { discard: true });
-			}, { active : true });
 		},
 
 		// Handles win conditions for each level.
 		touch: function(x, y) {
+			if (PS.color(x, y) !== GRID_COLOR) { PS.audioPlay("fx_click"); }
 
 			// Touch functionality for levels.
 			if (!level_select_active && !menu_active) {
@@ -485,7 +686,6 @@ const G = (function () {
 				// Keep track of each click in an array.
 				click_order.push(glyph_convert(x, y));
 				PS.color(x, y, CLICK_COLOR);
-				PS.audioPlay("fx_click");
 
 				// Check if the player won a level.
 				switch (level) {
@@ -540,7 +740,7 @@ const G = (function () {
 					case 9:
 						if (compare_clicks([0, 1, 3, 6, 4, 2])) {
 							win_list.push(level);
-							load_level_select();
+							load_menu(10);
 						}
 						break;
 					case 10:
@@ -594,6 +794,60 @@ const G = (function () {
 					case 18:
 						if (compare_clicks([1, 6, 9, 3, 7, 8, 2, 4, 5])) {
 							win_list.push(level);
+							load_menu(19);
+						}
+						break;
+					case 19:
+						if (compare_clicks([1, 2, 3, 4, 5, 6])) {
+							win_list.push(level);
+							load_menu(20);
+						}
+						break;
+					case 20:
+						if (compare_clicks([1, 2, 3, 4, 5, 6])) {
+							win_list.push(level);
+							load_menu(21);
+						}
+						break;
+					case 21:
+						if (compare_clicks([1, 3, 5, 6, 4, 2])) {
+							win_list.push(level);
+							load_menu(22);
+						}
+						break;
+					case 22:
+						if (compare_clicks([0, 1, 9, 3, 8, 4, 5, 2])) {
+							win_list.push(level);
+							load_menu(23);
+						}
+						break;
+					case 23:
+						if (compare_clicks([0, 2, 7, 9, 4, 3, 6, 1])) {
+							win_list.push(level);
+							load_menu(24);
+						}
+						break;
+					case 24:
+						if (compare_clicks([2, 4, 0, 5, 3, 1, 7, 8])) {
+							win_list.push(level);
+							load_menu(25);
+						}
+						break;
+					case 25:
+						if (compare_clicks([5, 6, 7, 2, 4, 0, 1, 3, 9])) {
+							win_list.push(level);
+							load_menu(26);
+						}
+						break;
+					case 26:
+						if (compare_clicks([8, 6, 1, 5, 4, 7, 9, 0, 2])) {
+							win_list.push(level);
+							load_menu(27);
+						}
+						break;
+					case 27:
+						if (compare_clicks([2, 3, 1, 5, 7, 6, 0, 9, 4])) {
+							win_list.push(level);
 							load_level_select();
 						}
 						break;
@@ -610,6 +864,10 @@ const G = (function () {
 						case 1:
 							// Second row of levels.
 							load_level(glyph_convert(x, y) + 9)
+							break;
+						case 2:
+							// Third row of levels.
+							load_level(glyph_convert(x, y) + 18)
 							break;
 					}
 				}
