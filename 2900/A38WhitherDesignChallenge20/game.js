@@ -804,7 +804,7 @@ const W = ( function () {
 
 			// NOTE: Whither's music is an honorary member of the PS Audio Library
 
-			PS.audioLoad( "A38WhitherDesignChallenge20", {
+			PS.audioLoad( "whither", {
 				onLoad : _loaded,
 				loop : true,
 				lock : true
