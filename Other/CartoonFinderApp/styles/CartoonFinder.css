@@ -150,14 +150,15 @@ button {
     display: inline-block;
 
     border: 2px solid white;
-    font-size: 18px;
+    font-size: 15px;
 
     margin-left: auto;
     margin-right: auto;
     margin-top: 1.5%;
 }
 
-.navButtonSmall {
+.navButtonInactive {
+    background-color: #665f72;
     padding: 2%;
     border-radius: 0;
     display: inline-block;
