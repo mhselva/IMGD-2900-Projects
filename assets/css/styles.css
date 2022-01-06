@@ -12,12 +12,13 @@ body {
 }
 
 h1 {
-  margin: 0;
+  margin: 5px;
   font-size: 40px;
+  text-decoration: underline;
 }
 
 h2 {
-  margin: 0;
+  margin: 5px;
   font-size: 18px;
   font-style: italic;
 }
@@ -28,12 +29,20 @@ p {
 
 .heading {
   background: rgba(28, 50, 101, 0.3);
+  width: 30%;
   text-align: center;
+  padding: 5px;
+  margin: 0 auto 25px;
+  border: 5px solid black;
 }
 
 .text-entry {
   background: rgba(28, 50, 101, 0.3);
+  width: 60%;
   text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  border: 5px solid black;
 }
 
 .portfolio-entry {
@@ -47,6 +56,7 @@ p {
   display: flex;
 
   padding: 10px;
+  border: 5px solid black;
 }
 
 .portfolio-description {
