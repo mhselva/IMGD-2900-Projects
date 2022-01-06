@@ -20,7 +20,7 @@ const G = (function () {
 
 		// Round 2. Either keep your square or switch to the other.
 		if (count === 1) {
-			if (PS.color(x,y) === PS.COLOR_BLACK) {
+			if (PS.color(x, y) === PS.COLOR_WHITE) {
 				return;
 			}
 
@@ -36,7 +36,7 @@ const G = (function () {
 			for (let i = 0; i < GRID; i++) {
 				for (let j = 0; j < GRID; j++) {
 					if (PS.glyph(i, j) !== GLYPH && PS.glyphColor(i, j) !== SELECT_COLOR) {
-						PS.color(i, j, PS.COLOR_BLACK);
+						PS.color(i, j, PS.COLOR_WHITE);
 					}
 				}
 			}
