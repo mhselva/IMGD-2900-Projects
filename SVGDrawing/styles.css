@@ -1,0 +1,97 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  font-family: Calibri, serif;
+}
+
+#canvasBox {
+  float: left;
+  width: 60%;
+  margin-left: 2%;
+  text-align: center;
+}
+
+#instructionBox {
+  display: inline-block;
+  padding: 5px 15px;
+  margin-top: 4%;
+  margin-left: 2%;
+  border: 3px solid black;
+}
+
+h1 {
+  margin: 5px;
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+h2 {
+  margin: 5px;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+li {
+  font-size: 18px;
+}
+
+input {
+  padding: 3px;
+  font-size: 20px;
+  width: 300px;
+}
+
+
+#colorPickR {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: red;
+  border: solid white 3px;
+}
+
+#colorPickY {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: yellow;
+  border: solid white 3px;
+}
+
+#colorPickG {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #00ff00;
+  border: solid white 3px;
+}
+
+#colorPickB {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: blue;
+  border: solid white 3px;
+}
+
+#colorPickP {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #ff00ff;
+  border: solid white 3px;
+}
+
+#colorPickBl {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: black;
+  border: solid white 3px;
+}

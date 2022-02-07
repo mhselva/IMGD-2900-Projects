@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Matthew Selva Project 1</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+
+	<script id="vshader" type="x-shader/x-vertex">
+        attribute vec4 vPosition;
+        attribute vec4 vColor;
+        varying vec4 fColor;
+        uniform mat4 modelMatrix;
+        uniform mat4 projMatrix;
+
+        void main() {
+            gl_Position = projMatrix * modelMatrix * vPosition;
+            gl_PointSize = 10.0;
+            fColor = vColor;
+        }
+	</script>
+
+	<script id="fshader" type="x-shader/x-fragment">
+        precision mediump float;
+        varying vec4 fColor;
+
+        void main() {
+            gl_FragColor = fColor;
+        }
+	</script>
+
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/initShaders.js"></script>
+    <script src="lib/MV.js"></script>
+    <script src="SVGDrawing.js"></script>
+
+  </head>
+
+  <body onload="main()">
+
+    <div id="canvasBox">
+        <h1>CS4731 Project 1</h1>
+
+        <canvas id="webgl" width="400" height="400" style="border: 5px solid black;" oncontextmenu="return false;">
+            Please use a browser that supports the "canvas" tag.
+        </canvas>
+
+        <div>
+            <button id="colorPickR">
+            </button>
+            <button id="colorPickY">
+            </button>
+            <button id="colorPickG">
+            </button>
+            <button id="colorPickB">
+            </button>
+            <button id="colorPickP">
+            </button>
+            <button id="colorPickBl">
+            </button>
+        </div>
+
+        <br>
+
+        <input accept="image/svg" type="file" id="filePicker"/>
+    </div>
+
+    <div id="instructionBox">
+        <h2>Instructions:</h2>
+        <ul>
+            <li><b>Mouse Wheel</b> to zoom in and out</li>
+            <li><b>Click</b> and <b>Drag</b> to move the image</li>
+            <li><b>Right Click</b> to make a point</li>
+            <ul>
+                <li><b>Right Click</b> again to make a line</li>
+                <li>Click a colored box to make the next<br>line you draw a different color</li>
+            </ul>
+            <li><b>R Key</b> to reset the image view</li>
+        </ul>
+    </div>
+
+  </body>
+</html>
