@@ -64,10 +64,19 @@ p {
   border: 5px solid black;
 }
 
-.portfolio-description {
-  text-align: justify;
-  text-justify: inter-word;
-  width: 60%;
+@media only screen and (max-width: 1281px){
+  .portfolio-description {
+    text-align: left;
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1281px){
+  .portfolio-description {
+    text-align: justify;
+    text-justify: inter-word;
+    width: 60%;
+  }
 }
 
 /* ~~~~~~~~~~ Slideshow Styles ~~~~~~~~~~ */
